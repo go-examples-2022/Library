@@ -1,9 +1,84 @@
 GET http://localhost:3000
 
 ####
+GET http://localhost:3000/
 
+####
+GET http://localhost:3000/bags
+
+####
+GET http://localhost:3000/bags/
+
+####
+GET http://localhost:3000/bags/1
+
+####
+GET http://localhost:3000/books
+
+####
+GET http://localhost:3000/books/
+
+####
 GET http://localhost:3000/books/1
 
 ####
+GET http://localhost:3000/books/b28bc612-21cd-4c5b-adf1-5b264561827d
 
-GET http://localhost:3000/books/2
+####
+
+POST http://localhost:3000
+Content-Type: application/json
+
+{}
+####
+
+POST http://localhost:3000/
+Content-Type: application/json
+
+{}
+
+####
+POST http://localhost:3000/bags
+Content-Type: application/json
+
+{}
+
+####
+POST http://localhost:3000/bags/
+Content-Type: application/json
+
+{}
+####
+POST http://localhost:3000/bags/1
+Content-Type: application/json
+
+{}
+
+####
+POST http://localhost:3000/books/
+Content-Type: application/json
+
+{}
+
+####
+POST http://localhost:3000/books
+Content-Type: application/json
+
+{
+    "Name": "Book Original"
+}
+
+####
+POST http://localhost:3000/books/1
+Content-Type: application/json
+
+{
+    "Name": "Book Dummy"
+}
+####
+POST http://localhost:3000/books/b28bc612-21cd-4c5b-adf1-5b264561827d
+Content-Type: application/json
+
+{
+    "Name": "Book Modified"
+}
