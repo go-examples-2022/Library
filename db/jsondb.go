@@ -5,7 +5,8 @@ import (
 	"encoding/json"
 	"errors"
 	"os"
-	"pkg/mod/github.com/google/uuid@v1.3.0"
+
+	"github.com/google/uuid"
 )
 
 var (
@@ -61,7 +62,7 @@ func (db *JsonDb) ReadOneById(id string) (*types.Book, error) {
 	return nil, ErrNotFound
 }
 
-//if book already exists is not checked, new record is created every time
+// if book already exists is not checked, new record is created every time
 func (db *JsonDb) Write(b types.Book) (string, error) {
 	//TODO:
 	data, err := os.ReadFile(db.FileName)
@@ -73,7 +74,7 @@ func (db *JsonDb) Write(b types.Book) (string, error) {
 	if err != nil {
 		return "", err
 	}
-	_ := uuid.New()
+	_ = uuid.New()
 	return "", nil
 }
 
