@@ -1,6 +1,7 @@
 package main
 
 import (
+	"Library/db"
 	"Library/handlers"
 	"fmt"
 	"log"
@@ -10,9 +11,12 @@ import (
 
 func main() {
 
+	db := db.NewJsonDb("data")
+	h := handlers.NewHttpHandler(db)
+
 	// Handlers
-	http.HandleFunc("/", handlers.GreetingsHandler)
-	http.HandleFunc("/books/", handlers.GetBooksHandler)
+	http.HandleFunc("/", h.GreetingsHandler)
+	http.HandleFunc("/books/", h.BooksHandler)
 
 	// Start a server on port
 	// port := ":5050"
